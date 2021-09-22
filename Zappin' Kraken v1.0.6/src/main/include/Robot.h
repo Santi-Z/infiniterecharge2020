@@ -43,9 +43,10 @@ class Robot : public frc::TimedRobot {
     ThreeCloseFiveClose m_three_close_five_close;
 
     std::string auto_list = "Sit,3+4,3+3 Close,3+3 Mid,6,5,3 back,3 forwards,Back 3,Back";
+    std::string drive_scheme_list = "Tank Drive,Arcade Drive";
     frc::Command* autos[11] = {nullptr, &m_three_close_four_close, &m_three_close_three_close, &m_three_close_three_mid, &m_six_ball_trench, &m_five_ball_trench, &m_shoot_three_drive_back, &m_shoot_three_drive_forwards, &m_drive_back_shoot_three, &m_drive_off_line};
 
-    nt::NetworkTableEntry auto_chooser_entry, auto_list_entry;
+    nt::NetworkTableEntry auto_chooser_entry, auto_list_entry, drive_scheme_chooser_entry, drive_scheme_list_entry;
 
   public:
     static OI m_oi;

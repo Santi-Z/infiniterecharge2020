@@ -18,10 +18,14 @@ class Drivetrain : public frc::Subsystem {
 
     double x_position, z_position, linear_displacement;
 
+    bool arcade = false;
+
   public:
+
     Drivetrain();
     void InitDefaultCommand() override;
 
+    void SetArcade(bool arc);
     void SetRawSpeed(double left, double right);
     void SetCurvedSpeed(double left, double right);
     double GetCurvedSpeed(double value);

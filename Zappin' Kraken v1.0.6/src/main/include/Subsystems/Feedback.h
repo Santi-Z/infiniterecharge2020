@@ -19,6 +19,7 @@ class Feedback : public frc::Subsystem {
     nt::NetworkTableEntry distance_to_target, limelight_angle_error;
     nt::NetworkTableEntry close_target_RPM, near_target_RPM, mid_target_RPM, far_target_RPM;
     nt::NetworkTableEntry close_target_angle_offset, near_target_angle_offset, mid_target_angle_offset, far_target_angle_offset;
+    nt::NetworkTableEntry arcade_rotation_modifier;
 
     Feedback();
     void InitDefaultCommand() override;

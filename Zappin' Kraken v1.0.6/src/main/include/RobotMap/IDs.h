@@ -13,8 +13,10 @@ constexpr int kDrivetrainFrontRightMotor = 2;      //Talon FX
 constexpr int kDrivetrainBackLeftMotor = 3;        //Talon FX
 constexpr int kDrivetrainBackRightMotor = 4;       //Talon FX
 
-constexpr int kLeftDriveAxis = 1;                  //Driver Left Stick Y-axis
-constexpr int kRightDriveAxis = 5;                 //Driver Right Stick Y-axis
+constexpr int kLeftDriveAxisY = 1;                 //Driver Left Stick Y-axis
+constexpr int kRightDriveAxisY = 5;                //Driver Right Stick Y-axis
+constexpr int kLeftDriveAxisX = 0;                 //Driver Left Stick X-axis
+constexpr int kRightDriveAxisX = 4;                //Driver Right Stick X-axis
 
 constexpr int kInvertDrivingButton = 5;            //Driver Left Bumper
 

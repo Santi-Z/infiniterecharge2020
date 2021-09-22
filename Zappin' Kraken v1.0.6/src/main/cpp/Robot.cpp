@@ -23,7 +23,16 @@ void Robot::RobotInit() {
   auto_chooser_entry.SetDouble(0);
   auto_list_entry.SetString(auto_list);
 
+  drive_scheme_chooser_entry = table->GetEntry("Drive Scheme Chooser");
+  drive_scheme_list_entry = table->GetEntry("Drive Scheme List");
+  drive_scheme_chooser_entry.SetDouble(0);
+  drive_scheme_list_entry.SetString(drive_scheme_list);
+
   Robot::m_intake_flipper.SetDesiredPosition(kIntakeFlipperUp);
+  
+  if ((int) drive_scheme_chooser_entry.GetDouble(0) == 1) {
+    Robot::m_drivetrain.SetArcade(true);
+  }
 
   m_intake_flipper.ResetAngle();
   m_storage.SetManualControl(false);

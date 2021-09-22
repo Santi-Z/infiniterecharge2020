@@ -31,6 +31,8 @@ Feedback::Feedback() : Subsystem("ExampleSubsystem") {
   z_position = table->GetEntry("Z Position");
   distance_to_target = table->GetEntry("Distance to Target");
   limelight_angle_error = table->GetEntry("Limelight Angle Error");
+  
+  arcade_rotation_modifier = table->GetEntry("Arcade Rotation Modifier");
 }
 
 void Feedback::InitDefaultCommand() {

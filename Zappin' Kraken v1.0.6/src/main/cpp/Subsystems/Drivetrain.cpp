@@ -1,8 +1,11 @@
 #include "Subsystems/Drivetrain.h"
-#include "Commands/Looped/Drive.h"
+#include "Commands/Looped/TankDrive.h"
+#include "Commands/Looped/ArcadeDrive.h"
 #include "RobotMap/IDs.h"
 #include "RobotMap/Constants.h"
 #include "RobotMap/Tuning.h"
+
+
 
 Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain") {
 	m_left_front.ConfigFactoryDefault();
@@ -27,7 +30,16 @@ Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain") {
 }
 
 void Drivetrain::InitDefaultCommand() {
-  SetDefaultCommand(new Drive);
+	if (arcade == true) {
+		SetDefaultCommand(new ArcadeDrive);
+	} else {
+		SetDefaultCommand(new TankDrive);
+	}
+  
+}
+
+void Drivetrain::SetArcade(bool arc) {
+	arcade = arc;
 }
 
 void Drivetrain::SetRawSpeed(double left, double right) {
